@@ -10,12 +10,14 @@ var browserify = require('gulp-browserify');
 var browserSync = require('browser-sync').create();
 var jade = require('gulp-jade');
 var plumber = require('gulp-plumber');
+var autoprefixer = require('gulp-autoprefixer');
+var concat = require('gulp-concat');
 
 var paths = {
-    scripts: 'src/scripts/*',
-    styles: 'src/styles/*',
+    scripts: 'src/**/*.js',
+    styles: 'src/**/*.scss',
     images: 'src/images/*',
-    jade: 'src/jade/*'
+    jade: 'src/jade/*.jadee'
 };
 
 gulp.task('clean', function() {
@@ -24,7 +26,7 @@ gulp.task('clean', function() {
 
 gulp.task('jade', function() {
     var YOUR_LOCALS = {};
-    gulp.src(paths.jade)
+    gulp.src('src/jade/index.jade')
         .pipe(jade({
             locals: YOUR_LOCALS,
             pretty: true
@@ -36,6 +38,7 @@ gulp.task('jade', function() {
 gulp.task('scripts', function() {
     return gulp.src(paths.scripts)
         .pipe(plumber())
+        .pipe(concat('app.js'))
         .pipe(browserify({
             insertGlobals : true,
             debug : !gulp.env.production
@@ -53,8 +56,12 @@ gulp.task('images', function() {
 });
 
 gulp.task('sass', function () {
-    return gulp.src(paths.styles)
-        .pipe(sass().on('error', sass.logError))
+    return gulp.src('src/styles/*')
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: true
+        }))
         .pipe(gulp.dest('dist/styles'))
         .pipe(browserSync.stream());
 });
@@ -64,11 +71,11 @@ gulp.task('serve', ['clean','jade','sass','scripts','images'], function() {
         server: "/Users/Hlavo/www/hlavoDesign/dist"
         // SET THE ROOT FOLDER OF THE PROJECT
     });
-    gulp.watch(paths.jade, ['jade']).on('change', browserSync.reload);
+    gulp.watch('src/jade/**/*', ['jade']);
     gulp.watch(paths.scripts, ['scripts']);
     gulp.watch(paths.images, ['images']);
     gulp.watch(paths.styles, ['sass']);
-    gulp.watch("dist/*.html").on('change', browserSync.reload);
+    gulp.watch("dist/index.html").on('change', browserSync.reload);
 });
 
 gulp.task('watch', function() {
