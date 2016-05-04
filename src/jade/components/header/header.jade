@@ -1,14 +1,8 @@
 //Created by Hlavo on 13.4.16.
 mixin Header
-   html
-      head
-         title HlavoDesign
-         meta(charset="utf-8")
-         meta(charset="utf-8")
-         meta(name="keywords" content="hlavo,web,design,aplikácia")
-         meta(name="description" content="HlavoDesign, tvorba webov a webových aplikácií.")
-         meta(http-equiv="X-UA-Compatible" content="IE=edge")
-         meta(name="viewport" content="width=device-width, initial-scale=1")
-         meta(name="author" content="HlavoDesign")
-         link(rel="stylesheet" href="styles/style.css")
-         script(src="scripts/app.js")
+   header.header
+      .header__bg
+         h1.header__bg__title I DEVELOP WEBSITES AND WEB APPS
+      .header__clear#nav
+         +Nav()
+         +Logo()

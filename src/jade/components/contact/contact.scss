@@ -1,0 +1,184 @@
+.section--contact{
+  padding-top: $margin--section;
+  padding-bottom: 0;
+  background: $cierna;
+}
+.buttons{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: inline-block;
+  float: right;
+  @extend %clearfix;
+  &__item{
+    color:$biela;
+    float: left;
+    padding-left: 10px;
+    &__link{
+      text-decoration: none;
+      @extend %titleLine;
+      position: relative;
+      &:after{
+        position: absolute;
+        top: 1.5em;
+        left: .5em;
+        background:$biela;
+      }
+    }
+  }
+  @media screen and (max-width: 719px) {
+    width: 100%;
+    padding-bottom: 1em;
+    &__item{
+      width: 33%;
+      padding-left: 0;
+      &__link{
+        width: 100%;
+        display: block;
+        &:after{
+          top: 2.5em;
+          left: 4.8em;
+        }
+      }
+    }
+  }
+}
+.photo{
+  width: 15em;
+  height: 15em;
+  background-image: url('../images/photo.jpg');
+  background-size: cover;
+  border: 3px solid $biela;
+  margin: 0em auto;
+  @media screen and (max-width: 1230px) {
+    margin: 0 0  0 1em;
+  }
+  @media screen and (max-width: 610px) {
+    float: none;
+    margin: 0;
+  }
+}
+.contact{
+  list-style: none;
+  font-size: 1.3em;
+  text-align: left;
+  padding-left: 1em;
+  font-weight: 100;
+  margin-top: 0;
+  padding-top: 0;
+  @media screen and (max-width: 1230px) {
+    float: right;
+    margin: 0 1em  0 0;
+  }
+  @media screen and (max-width: 610px) {
+    float: none;
+    margin: 0 0 2.3077em 0;
+    padding: 0;
+  }
+  .fa{
+    position: absolute;
+    top: 0.5em;
+    left: 0;
+    font-size: 1.3em;
+    display: inline-block;
+    width: 2em;
+    vertical-align: middle;
+  }
+  &__item{
+    position: relative;
+    &__link{
+      font-size: 1.2em;
+      padding-left: 2em;
+      line-height: 2.2em;
+      text-decoration: none;
+      display: inline-block;
+    }
+  }
+}
+.form{
+  width: 100%;
+  @media screen and (max-width: 1230px) {
+    margin-top: 3em;
+  }
+  &__label{
+    display: block;
+    letter-spacing: .2em;
+    text-align: center;
+    height: 5em;
+    position: relative;
+    &__text{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      color: $cierna;
+      cursor: text;
+      font-size: 1em;
+      line-height: 1em;
+      text-transform: uppercase;
+      transform: translateY(-2.5em);
+      transition: all 0.7s;
+    }
+    &__item{
+      font-weight: 100;
+      width: 70%;
+      border: 0;
+      background: $biela;
+      border-bottom: 2px solid white;
+      color: $cierna;
+      font-size: 1.5em;
+      letter-spacing: -1px;
+      outline: 0;
+      padding: 5px 1.3em;
+      text-align: center;
+      transition: all 0.7s;
+      @media screen and (max-width: 610px) {
+        width: 100%;
+      }
+      &--textarea + .form__label__text{
+        transform:translateY(-2em);
+      }
+      &:focus{
+        width: 80%;
+        & + .form__label__text{
+          color: white;
+          font-size: 1em;
+          transform:translateY(-5em);
+        }
+      }
+      &:valid + .form__label__text{
+        font-size: 1em;
+        color:$biela;
+        transform:translateY(-5em);
+      }
+      &.form__label__item--button{
+        font-size: 1.5em;
+        cursor: pointer;
+        color:$biela;
+        background: $cierna;
+        border-bottom-width: 0;
+        position: relative;
+        margin-bottom: 1em;
+        &:after{
+          content: "";
+          position: absolute;
+          bottom: -3px;
+          display: block;
+          width: 0;
+          left: 0;
+          background: $biela;
+          height: 3px;
+          transition: all 1s;
+        }
+        &:hover{
+          &:after{
+            width: 100%;
+          }
+        }
+      }
+      &--textarea{
+        height: 100%;
+      }
+    }
+  }
+}

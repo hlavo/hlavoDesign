@@ -1,0 +1,24 @@
+//Created by Hlavo on 13.4.16.
+mixin Skill
+   section.section.section--skill#skill
+      header.section__header
+         h3.section__header__title Moje zručnosti
+      main.section__main
+         p.section__main__text Lorem Ipsum je štandardným výplňovým textom už od 16. storočia, keď neznámy tlačiar zobral.
+            |Lorem Ipsum je štandardným výplňovým textom už od 16. storočia, keď neznámy tlačiar zobral.
+         .row
+            .col.col__3.col__3--md.skill
+               h3.skill__header BACKEND
+               ul.skill__list
+                  each item in ['PHP','LARAVEL','WORDPRESS']
+                     li.skill__list__item=item
+            .col.col__3.col__3--md.skill
+               h3.skill__header FRONTEND
+               ul.skill__list
+                  each item in ['HTML5, CSS3','Sass, Less','Bootstrap, Semantic Ui', 'Javascript, jQuery','REACT, REDUX','GULP','GIT']
+                     li.skill__list__item=item
+            .col.col__3.col__3--md.skill
+               h3.skill__header UIX
+               ul.skill__list
+                  each item in ['PHOTOSHOP']
+                     li.skill__list__item=item

@@ -1,3 +1,71 @@
-body{
-  background: blue;
+@keyframes intro {
+  from {opacity: 0;}
+  to {opacity: 1}
+}
+.header{
+  &__bg{
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: table;
+    background: url("../images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    font-size: 1.5em;
+    &__title{
+      color:$biela;
+      font-weight: 100;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      opacity: 0;
+      animation-name: intro;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+      @media screen and (max-width: 1230px) {
+        font-size: 1.9em;
+        transform:translateY(Calc(-1.5em));
+      }
+      @media screen and (max-width: 719px) {
+        font-size: 1.6em;
+      }
+      @media screen and (max-width: 560px) {
+        font-size: 1.3em;
+        line-height: 1.2;
+      }
+    }
+  }
+  &__clear{
+    position: fixed;
+    padding: .5em 0;
+    transition: all .5s;
+    width: 100%;
+    top: 0;
+    left: 0;
+    font-size: 1.1em;
+    @extend %clearfix;
+    z-index: 99999999;
+  }
+}
+
+.header__clear--black{
+  background: $cierna;
+  color:$biela;
+  .nav-mobile__wrapper span{
+    background:$biela;
+  }
+  .nav__item__link{
+    color:$biela;
+    &:after{
+      background: $biela;
+    }
+  }
+  .logo__icon{
+    border-color: $biela;
+  }
 }

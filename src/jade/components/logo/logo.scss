@@ -1,0 +1,18 @@
+.logo{
+  cursor: pointer;
+  float: left;
+  padding-left: 1em;
+  font-size: 1.3em;
+  &__icon{
+    display: inline-block;
+    width: 2.3em;
+    height: 2.3em;
+    line-height: 2em;
+    border: .19em solid $cierna;
+    text-align: center;
+  }
+  &__text{
+    padding-left: 2em;
+    letter-spacing: .1em;
+  }
+}

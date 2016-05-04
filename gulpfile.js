@@ -17,16 +17,29 @@ var paths = {
     scripts: 'src/**/*.js',
     styles: 'src/**/*.scss',
     images: 'src/images/*',
-    jade: 'src/jade/*.jadee'
+    jade: 'src/jade/*.jade',
+    font: 'src/fonts/*',
+    php: 'src/php/*'
 };
 
 gulp.task('clean', function() {
     return del(['dist/*']);
 });
 
+gulp.task('font', function() {
+    return gulp.src(paths.font)
+        .pipe(gulp.dest('dist/fonts'))
+})
+
+gulp.task('php', function() {
+    return gulp.src(paths.php)
+        .pipe(gulp.dest('dist/php'))
+})
+
 gulp.task('jade', function() {
     var YOUR_LOCALS = {};
     gulp.src('src/jade/index.jade')
+        .pipe(plumber())
         .pipe(jade({
             locals: YOUR_LOCALS,
             pretty: true
@@ -56,7 +69,7 @@ gulp.task('images', function() {
 });
 
 gulp.task('sass', function () {
-    return gulp.src('src/styles/*')
+    return gulp.src('src/styles/style.scss')
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
@@ -66,7 +79,7 @@ gulp.task('sass', function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task('serve', ['clean','jade','sass','scripts','images'], function() {
+gulp.task('serve', ['clean','font','php','jade','sass','scripts','images'], function() {
     browserSync.init({
         server: "/Users/Hlavo/www/hlavoDesign/dist"
         // SET THE ROOT FOLDER OF THE PROJECT

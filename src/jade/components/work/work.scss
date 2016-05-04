@@ -1,0 +1,101 @@
+.section--work{
+  &__item{
+    position: relative;
+    height: 20em;
+    margin: 0;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: block;
+    text-align: center;
+    @media screen and (max-width: 700px) {
+      background-size: 15em;
+      height: 12.5em;
+    }
+    @media screen and (max-width: 490px) {
+      height: 11em;
+    }
+    &--bs{
+      background-image: url("../images/bs.png");
+      @media screen and (max-width: 700px) {
+        background-size: 17em;
+      }
+      @media screen and (max-width: 490px) {
+        background-size: 45%;
+      }
+    }
+    &--zentiva{
+      background-image: url("../images/zentiva.jpg");
+      @media screen and (max-width: 700px) {
+        background-size: 30em;
+      }
+      @media screen and (max-width: 490px) {
+        background-size: 80%;
+      }
+    }
+    &--zlato{
+      background-image: url("../images/zlato.svg");
+      @media screen and (max-width: 700px) {
+        background-size: 30em;
+      }
+      @media screen and (max-width: 490px) {
+        background-size: 80%;
+      }
+    }
+    &__header{
+      text-decoration: none;
+      color:$biela;
+      font-size: 2em;
+      display: block;
+      margin-bottom: .2em;
+      &:after{
+        content: "";
+        display: block;
+        margin: -.3em auto 0 auto;
+        text-align: center;
+        width: 1em;
+        opacity: 0;
+        height: .1em;
+        background: $biela;
+      }
+    }
+    &__text{
+      position: absolute;
+      overflow: hidden;
+      bottom: 0em;
+      left: 0;
+      height: 0%;
+      width: 100%;
+      background: rgba(0,0,0,.7);
+      transition: height .4s;
+      &__centrator{
+        color:$biela;
+        width: 99%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        .button{
+          margin-top: 1em;
+        }
+      }
+    }
+    &:hover &__text{
+      @media screen and (min-width: 1280px) {
+        height: 100%;
+      }
+    }
+    &:hover &__link:after
+    {
+      animation-fill-mode: forwards;
+      animation-delay: .5s;
+      animation-name: link;
+      animation-duration: .3s;
+    }
+  }
+}
+
+@keyframes link {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
