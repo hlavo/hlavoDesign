@@ -3,9 +3,9 @@
     position: relative;
     height: 20em;
     margin: 0;
-    background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
+    background-size: 92%;
     display: block;
     text-align: center;
     @media screen and (max-width: 700px) {
@@ -16,6 +16,7 @@
       height: 11em;
     }
     &--bs{
+      //background-size: 75%;
       background-image: url("../images/bs.png");
       @media screen and (max-width: 700px) {
         background-size: 17em;

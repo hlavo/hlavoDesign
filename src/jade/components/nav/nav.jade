@@ -8,11 +8,6 @@ mixin Nav
          span
    nav.nav.nav-classic
       ul.nav-clasic__wrapper
-         li.nav__item
-            a(href="#about").nav__item__link O MNE
-         li.nav__item
-            a(href="#work").nav__item__link REFERENCIE
-         li.nav__item
-            a(href="#skill").nav__item__link ZRUČNOSTI
-         li.nav__item
-            a(href="#contact").nav__item__link KONTAKT
+         each item in nav__item
+            li.nav__item
+               a(href=item.href).nav__item__link=item.text

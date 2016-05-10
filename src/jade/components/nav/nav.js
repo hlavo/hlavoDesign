@@ -40,11 +40,11 @@ $(function(){
 
     function animateScroll(event){
         event.preventDefault();
-        var hash = event.target.getAttribute("href"),
+        var hash = event.target.getAttribute("href") || false,
             $section = $(hash),
             $mobilneNav = $("#mobile-nav");
         animatingScroll($section);
-        location.hash = hash;
+        if(hash) location.hash = hash;
         $mobilneNav.removeClass('nav-mobile__status--open');
         $mobilneNav.addClass('nav-mobile__status--hide');
     }
@@ -68,5 +68,5 @@ $(function(){
 
     $(document).on("scroll",changeColor);
 
-    $menuItem.add('.logo, .contact__item__link--map').on("click",animateScroll);
+    $menuItem.add('.logo:not(.logo--big), .contact__item__link--map').on("click",animateScroll);
 })

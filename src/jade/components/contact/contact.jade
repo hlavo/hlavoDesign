@@ -2,7 +2,7 @@
 mixin Contact
     section.section.section--contact
         header.section__header
-            h3.section__header__title.section__header__title--white Kontakt
+            h3.section__header__title.section__header__title--white=sectioncontact.title
         main.section__main
             .row
                 .col.col__6.col__6--md
@@ -11,29 +11,34 @@ mixin Contact
                             ul.contact
                                 li.contact__item
                                     i.fa.fa-phone(aria-hidden="true")
-                                    a(href="tel:+4201231234").contact__item__link
-                                        span +420 123 1234
+                                    a(href="tel:+420734134057").contact__item__link
+                                        span +420 734 134 057
                                 li.contact__item
                                     i.fa.fa-envelope-o(aria-hidden="true")
                                     a(href="mailto:hlavodesign@gmail.com").contact__item__link hlavodesign@gmail.com
                                 li.contact__item
                                     i.fa.fa-map-marker(aria-hidden="true")
-                                    a(href="#map").contact__item__link.contact__item__link--map Hadovitá 898/16 <br>Praha, Česká republika
+                                    a(href="#map").contact__item__link.contact__item__link--map!=sectioncontact.adress
                         .col.col__6.col__6--xs
                             .photo
                 .col.col__6.col__6--md
-                    form(method="post").form
+                    form(method="post" action="php/form.php", data-alert=sweatAlert).form
+                        .loading
+                            span.loading__dot .
+                            span.loading__dot  .
+                            span.loading__dot  .
                         label.form__label
-                            input(type="text", name="meno",required, autocomplete="off").form__label__item
-                            .form__label__text Meno
+                            input(type="text", data-pattern="length" ,name="meno",required, autocomplete="off").form__label__item
+                            .form__label__text=sectioncontact.labelname
                         label.form__label
-                            input(type="email", name="email",required, autocomplete="off").form__label__item
+                            input(type="email", data-pattern="email", name="email",required, autocomplete="off").form__label__item
                             .form__label__text Email
                         label.form__label
-                            textarea(type="text", name="meno",required, autocomplete="off").form__label__item.form__label__item--textarea
-                            .form__label__text Sprava
+                            textarea(type="text", data-pattern="length", name="text",required, autocomplete="off").form__label__item.form__label__item--textarea
+                            .form__label__text=sectioncontact.labelmessage
+                            input(type="hidden", data-pattern="length",name="csrf_token",value!="<?=$_SESSION['csrf_token'];?>")
                         div.form__wrapper
-                            button(type="submit",placeholder="Message").form__label__item.form__label__item--button Pošlite mi správu
+                            button(type="submit").form__label__item.form__label__item--button=sectioncontact.button
         footer.section__footer
             .row
                 .col.col__6.col__6--sm

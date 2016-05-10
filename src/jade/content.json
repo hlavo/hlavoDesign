@@ -1,0 +1,85 @@
+{
+  "header__bg__title": "PROGRAMUJEM A DIZAJNUJEM WEBY",
+  "nav__item": [
+    {
+      "text":"O MNE",
+      "href":"#about"
+    },
+    {
+      "text":"PROJEKTY",
+      "href":"#work"
+    },
+    {
+      "text":"ZRUČNOSTI",
+      "href":"#skill"
+    },
+    {
+      "text":"KONTAKT",
+      "href":"#contact"
+    }
+
+  ],
+  "sectionabout":{
+    "title":"O mne",
+    "text":"Zdravím! Volám sa Peter Hlavena a som ten, koho potrebujete, ak túžite po modernom a atraktívnom webe.Som programátor webových stránok a webových aplikácií na voľnej nohe a toto je portfólio mojej práce.Pôsobím v Prahe a webdevelopment nie je len mojou prácou, ale aj koníčkom."
+  },
+  "sectionwork":{
+    "title":"Projekty",
+    "projects":[
+      {
+        "title":"ZLATO.CZ",
+        "text":"Redakčný systém WORDPRESS tvorí jadro projektu ZLATO.cz. V rámci tímovej spolupráce som sa zameral na tvorbu responzívnych HTML šablón, ich grafické štýlovanie a javaScriptovú logiku.",
+        "class":"zlato",
+        "href":"https://www.zlato.cz/"
+      },
+      {
+        "title":"BLUE STYLE",
+        "text":"Rozsiahly tímový projekt Blue Style je okrem zákazníckeho webu (B2C) rozšírený aj o verziu pre predajcov (B2B). Štýlovanie, tvorba HTML šablon (napr. vyhľadávanie zájazdov, detail hotelu) a javaScriptová logika (B2B) tohto projektu",
+        "class":"bs",
+        "href":"http://www.blue-style.cz/"
+      },
+      {
+        "title":"ZENTIVA",
+        "text":"Interaktívne prvky optimalizované pre iPad sú atraktívnym elementom, ktorý zaručene zaujme každého užívateľa. Ide o tvorbu animovaných prezentácií pomocou HTML5, CSS3 a knižnice jQuery.",
+        "class":"zentiva",
+        "href":false
+      }
+    ]
+  },
+  "sectionskill":{
+    "title":"Zručnosti",
+    "text":"Zameriavam sa na najmodernejšie trendy a technológie spojené s frontendom. Základná znalosť backendových technológií je tiež neodmysliteľnou súčasťou tvorby webových stránok. Mojím cieľom je tvorba programátorsky čistých a korektne fungujúcich webov odrážajúcich priania mojich klientov.",
+    "items":[
+      {
+      "title":"BACKEND",
+      "skills":["PHP","LARAVEL","WORDPRESS"]
+      },
+      {
+        "title":"FRONTEND",
+        "skills":["HTML5, CSS3","Sass, Less","Bootstrap, Semantic Ui", "JavaScript, jQuery","REACT, REDUX","GULP","GIT"]
+      },
+      {
+        "title":"UIX",
+        "skills":["PHOTOSHOP"]
+      }
+    ]
+  },
+  "sectioncontact":{
+    "title":"Kontakt",
+    "adress":"Hadovitá 898/16 <br>Praha, Česká republika",
+    "labelname":"meno",
+    "labelmessage":"Správa",
+    "button":"Pošlite mi správu"
+
+  },
+  "sweatAlert": {
+    "success":{
+      "title":"Ďakujem",
+      "text":"Ďakujem Vám za správu. Čo najrýchlejšie Vás budem kontaktovať."
+    },
+    "fail":{
+      "title":"Ooops",
+      "text":"Niečo sa pokazilo, pošlite mi holuba :)."
+    }
+  }
+}

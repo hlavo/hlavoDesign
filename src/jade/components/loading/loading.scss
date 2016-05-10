@@ -1,0 +1,35 @@
+.loading{
+  text-align: center;
+  &__dot {
+    position: relative;
+    bottom: 1em;
+    font-size: 2em;
+    text-align: center;
+    color: $biela;
+    animation-name: blink;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  }
+
+  &__dot:nth-child(2) {
+    animation-delay: .2s;
+  }
+
+  &__dot:nth-child(3) {
+    animation-delay: .4s;
+  }
+}
+
+
+@keyframes blink {
+  0% {
+    opacity: .2;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .2;
+  }
+}

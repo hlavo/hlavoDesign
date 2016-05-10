@@ -1,6 +1,7 @@
 @import '../../node_modules/font-awesome/scss/font-awesome.scss';
 @import '../../node_modules/normalize-scss/fork-versions/default/normalize';
 @import './variables';
+@import './sweatAlert';
 
 body, html{
   box-sizing:border-box;
@@ -15,7 +16,6 @@ body{
   overflow-x: hidden;
   font-family: 'Palanquin', sans-serif;
 }
-
 *, *:before, *:after{
   box-sizing:inherit;
   -moz-box-sizing:inherit;
@@ -56,6 +56,11 @@ h3, p, h1{
 .container{
   @media screen and (max-width: 1000px) {
     font-size: .8em;
+  }
+  opacity: 0;
+  transition: opacity .2s;
+  &.body--ready{
+    opacity: 1;
   }
 }
 .col{
@@ -166,6 +171,8 @@ h3, p, h1{
 @import '../jade/components/contact/contact.scss';
 @import '../jade/components/skill/skill.scss';
 @import '../jade/components/overlay/overlay.scss';
+@import '../jade/components/preloader/preloader.scss';
+@import '../jade/components/loading/loading.scss';
 
 //body > div:first-child{
 //  display: none!important;

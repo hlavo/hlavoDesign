@@ -1,24 +1,14 @@
 //Created by Hlavo on 13.4.16.
 mixin Work
-   section#work.section.section--work
-      header.section__header
-         h3.section__header__title Projekty
-      main.section__main
-         .row
-            .col.col__3.col__3--sm.col__3--md.section--work__item.section--work__item--zlato
-               .section--work__item__text
-                   p.section--work__item__text__centrator
-                     span.section--work__item__header ZLATO.CZ
-                     | Lorem Ipsum je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem Ipsum je štandardným výplňovým textom už od 16. storočia, keď neznámy tlačiar zobral
-                     a(target="_blank",href="https://www.zlato.cz/").button.button--center Online
-            .col.col__3.col__3--sm.col__3--md.section--work__item.section--work__item--bs
-               .section--work__item__text
-                  p.section--work__item__text__centrator
-                     span.section--work__item__header BLUE STYLE
-                     | Lorem Ipsum je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem Ipsum je štandardným výplňovým textom už od 16. storočia, keď neznámy tlačiar zobral
-                     a(target="_blank",href="http://www.blue-style.cz/").button.button--center Online
-            .col.col__3.col__3--sm.col__3--md.section--work__item.section--work__item--zentiva
-               .section--work__item__text
-                   p.section--work__item__text__centrator
-                     span.section--work__item__header Zentiva
-                     | Lorem Ipsum je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem Ipsum je štandardným výplňovým textom už od 16. storočia, keď neznámy tlačiar zobral
+    section#work.section.section--work
+        header.section__header
+            h3.section__header__title=sectionwork.title
+        main.section__main
+            .row
+                each item in sectionwork.projects
+                    div(class="col col__3 col__3--sm col__3--md section--work__item section--work__item--#{item.class}")
+                        .section--work__item__text
+                            p.section--work__item__text__centrator
+                                span.section--work__item__header=item.title
+                                |#{item.text}
+                                a(target="_blank",href=item.href).button.button--center Online

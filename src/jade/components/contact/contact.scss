@@ -97,6 +97,24 @@
 }
 .form{
   width: 100%;
+  position: relative;
+  .loading{
+    display: none;
+    font-size: 2em;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    left: 50%;
+    margin-left: -28.265px;
+  }
+  &--loading, &--loading *{
+    pointer-events: none !important;
+    opacity: .8;
+    .loading{
+      position: absolute;
+      display: block;
+    }
+  }
   @media screen and (max-width: 1230px) {
     margin-top: 3em;
   }
@@ -118,6 +136,9 @@
       text-transform: uppercase;
       transform: translateY(-2.5em);
       transition: all 0.7s;
+      &--error{
+        color:$cervena !important;
+      }
     }
     &__item{
       font-weight: 100;
@@ -151,6 +172,11 @@
         color:$biela;
         transform:translateY(-5em);
       }
+      & + .form__label__text--valid{
+        font-size: 1em;
+        transform:translateY(-5em);
+      }
+
       &.form__label__item--button{
         font-size: 1.5em;
         cursor: pointer;

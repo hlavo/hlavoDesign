@@ -1,0 +1,84 @@
+{
+  "header__bg__title": "I DEVELOP AND DESIGN WEBSITES",
+  "nav__item": [
+    {
+      "text":"ABOUT",
+      "href":"#about"
+    },
+    {
+      "text":"PROJECTS",
+      "href":"#work"
+    },
+    {
+      "text":"SKILLS",
+      "href":"#skill"
+    },
+    {
+      "text":"CONTACTS",
+      "href":"#contact"
+    }
+
+  ],
+  "sectionabout":{
+    "title":"About",
+    "text":"Welcome! My name is Peter Hlavena and I am the one you need in case you desire a modern and attractive website. I am freelanced developer of websites and  webapps and this is a portfolio of my work. I live in Prague and  webdevelopment is not only my job, but my hobby as well."
+  },
+  "sectionwork":{
+    "title":"Projects",
+    "projects":[
+      {
+        "title":"ZLATO.CZ",
+        "text":"CMS system WORDPRESS is the core of project Zlato.cz. Within the team cooperation I was focused on creation of HTML templates, their styling and javaScript logic.",
+        "class":"zlato",
+        "href":"https://www.zlato.cz/"
+      },
+      {
+        "title":"BLUE STYLE",
+        "text":"Extensive team project Blue Style is besides customer web (B2C) enhanced by web for tour sellers (B2B). Styling, creation of HTML templates (e.g. tours searching tool, details of hotels) and javaScript logic (B2B) of this project are my presentation.",
+        "class":"bs",
+        "href":"http://www.blue-style.cz/"
+      },
+      {
+        "title":"ZENTIVA",
+        "text":"Interactive elements optimized for iPad are attractive features that impress every user for sure. It is about creation of animated presentations using HTML5, CSS3 and library jQuery.",
+        "class":"zentiva",
+        "href":false
+      }
+    ]
+  },
+  "sectionskill":{
+    "title":"Skills",
+    "text":"I am focused on the most modern trends and technologies connected to front-end. Basic knowledge of back-end technologies is also inseparable part of web development. My aim is to create clear markup and correctly working websites that reflect wishes of my clients.",
+    "items":[
+      {
+        "title":"BACKEND",
+        "skills":["PHP","LARAVEL","WORDPRESS"]
+      },
+      {
+        "title":"FRONTEND",
+        "skills":["HTML5, CSS3","Sass, Less","Bootstrap, Semantic Ui", "JavaScript, jQuery","REACT, REDUX","GULP","GIT"]
+      },
+      {
+        "title":"UIX",
+        "skills":["PHOTOSHOP"]
+      }
+    ]
+  },
+  "sectioncontact":{
+    "title":"Contacts",
+    "adress":"Hadovitá 898/16 <br>Prague, Czech Republic",
+    "labelname":"Name",
+    "labelmessage":"Message",
+    "button":"Send me a message"
+  },
+  "sweatAlert": {
+    "success":{
+      "title":"Thank you",
+      "text":"Thank you for your message. I will contact you asap."
+    },
+    "fail":{
+      "title":"Ooops",
+      "text":"Something went wrong, send me a pigeon :)."
+    }
+  }
+}

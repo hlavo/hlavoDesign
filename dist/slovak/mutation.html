@@ -8,6 +8,8 @@
 <!--Created by Hlavo on 13.4.16.-->
 <!--Created by Hlavo on 13.4.16.-->
 <!--Created by Hlavo on 13.4.16.-->
+<!--Created by Hlavo on 13.4.16.-->
+<!--Created by Hlavo on 13.4.16.-->
 <!--Created by Hlavo on 13.4.16.--><!DOCTYPE html>
 <html>
   <head>
@@ -19,15 +21,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="HlavoDesign">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" type="image/png" href="favico/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="favico/favicon-16x16.png" sizes="16x16">
+    <link rel="stylesheet" href="<?=BASE_URL?>styles/style.css">
+    <link rel="icon" type="image/png" href="../favico/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../favico/favicon-16x16.png" sizes="16x16">
     <link href="https://fonts.googleapis.com/css?family=Palanquin:400,100,300&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <script src="http://maps.googleapis.com/maps/api/js"></script>
-    <script src="scripts/app.js"></script>
+    <script src="<?=BASE_URL?>scripts/app.js"></script>
   </head>
 </html>
 <body>
+  <div id="preloader" class="preloader preloader--show">
+    <div class="preloader__content">
+      <div class="logo logo--big">
+        <div class="logo__icon">hD</div>
+        <div class="loading"><span class="loading__dot">.</span><span class="loading__dot"> .</span><span class="loading__dot"> .</span></div><span class="logo__text">hlavoDesign</span>
+      </div>
+    </div>
+  </div>
   <div id="overlay" class="overlay overlay--hide">
     <div class="overlay__cross">✖</div>
     <div class="overlay__content"></div>
@@ -35,7 +45,7 @@
   <div class="container">
     <header class="header">
       <div class="header__bg">
-        <h1 class="header__bg__title">I DEVELOP WEBSITES AND WEB APPS</h1>
+        <h1 class="header__bg__title">PROGRAMUJEM A DIZAJNUJEM WEBY</h1>
       </div>
       <div id="nav" class="header__clear">
         <nav id="mobile-nav" class="nav nav-mobile nav-mobile__status--hide">
@@ -44,7 +54,7 @@
         <nav class="nav nav-classic">
           <ul class="nav-clasic__wrapper">
             <li class="nav__item"><a href="#about" class="nav__item__link">O MNE</a></li>
-            <li class="nav__item"><a href="#work" class="nav__item__link">REFERENCIE</a></li>
+            <li class="nav__item"><a href="#work" class="nav__item__link">PROJEKTY</a></li>
             <li class="nav__item"><a href="#skill" class="nav__item__link">ZRUČNOSTI</a></li>
             <li class="nav__item"><a href="#contact" class="nav__item__link">KONTAKT</a></li>
           </ul>
@@ -61,14 +71,7 @@
             <h3 class="section__header__title">O mne</h3>
           </header>
           <main class="section__main">
-            <p class="section__main__text">
-              Lorem Ipsum je štandardným výplňovým textom už od 16. storočia, keď neznámy tlačiar zobral.
-              Lorem Ipsum je štandardným výplňovým textom už od 16. storočia, keď neznámy tlačiar zobral.
-            </p>
-            <p class="section__main__text">
-              Lorem Ipsum je štandardným výplňovým textom už od 16. storočia, keď neznámy tlačiar zobral.
-              Lorem Ipsum je štandardným výplňovým textom už od 16. storočia, keď neznámy tlačiar zobral.
-            </p>
+            <p class="section__main__text">Zdravím! Volám sa Peter Hlavena a som ten, koho potrebujete, ak túžite po modernom a atraktívnom webe.Som programátor webových stránok a webových aplikácií na voľnej nohe a toto je portfólio mojej práce.Pôsobím v Prahe a webdevelopment nie je len mojou prácou, ale aj koníčkom.</p>
           </main>
         </section>
         <section id="work" class="section section--work">
@@ -79,17 +82,17 @@
             <div class="row">
               <div class="col col__3 col__3--sm col__3--md section--work__item section--work__item--zlato">
                 <div class="section--work__item__text">
-                  <p class="section--work__item__text__centrator"><span class="section--work__item__header">ZLATO.CZ</span>Lorem Ipsum je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem Ipsum je štandardným výplňovým textom už od 16. storočia, keď neznámy tlačiar zobral<a target="_blank" href="https://www.zlato.cz/" class="button button--center">Online</a></p>
+                  <p class="section--work__item__text__centrator"><span class="section--work__item__header">ZLATO.CZ</span>Redakčný systém WORDPRESS tvorí jadro projektu ZLATO.cz. V rámci tímovej spolupráce som sa zameral na tvorbu responzívnych HTML šablón, ich grafické štýlovanie a javaScriptovú logiku.<a target="_blank" href="https://www.zlato.cz/" class="button button--center">Online</a></p>
                 </div>
               </div>
               <div class="col col__3 col__3--sm col__3--md section--work__item section--work__item--bs">
                 <div class="section--work__item__text">
-                  <p class="section--work__item__text__centrator"><span class="section--work__item__header">BLUE STYLE</span>Lorem Ipsum je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem Ipsum je štandardným výplňovým textom už od 16. storočia, keď neznámy tlačiar zobral<a target="_blank" href="http://www.blue-style.cz/" class="button button--center">Online</a></p>
+                  <p class="section--work__item__text__centrator"><span class="section--work__item__header">BLUE STYLE</span>Rozsiahly tímový projekt Blue Style je okrem zákazníckeho webu (B2C) rozšírený aj o verziu pre predajcov (B2B). Štýlovanie, tvorba HTML šablon (napr. vyhľadávanie zájazdov, detail hotelu) a javaScriptová logika (B2B) tohto projektu<a target="_blank" href="http://www.blue-style.cz/" class="button button--center">Online</a></p>
                 </div>
               </div>
               <div class="col col__3 col__3--sm col__3--md section--work__item section--work__item--zentiva">
                 <div class="section--work__item__text">
-                  <p class="section--work__item__text__centrator"><span class="section--work__item__header">Zentiva</span>Lorem Ipsum je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem Ipsum je štandardným výplňovým textom už od 16. storočia, keď neznámy tlačiar zobral</p>
+                  <p class="section--work__item__text__centrator"><span class="section--work__item__header">ZENTIVA</span>Interaktívne prvky optimalizované pre iPad sú atraktívnym elementom, ktorý zaručene zaujme každého užívateľa. Ide o tvorbu animovaných prezentácií pomocou HTML5, CSS3 a knižnice jQuery.<a target="_blank" class="button button--center">Online</a></p>
                 </div>
               </div>
             </div>
@@ -97,13 +100,10 @@
         </section>
         <section id="skill" class="section section--skill">
           <header class="section__header">
-            <h3 class="section__header__title">Moje zručnosti</h3>
+            <h3 class="section__header__title">Zručnosti</h3>
           </header>
           <main class="section__main">
-            <p class="section__main__text">
-              Lorem Ipsum je štandardným výplňovým textom už od 16. storočia, keď neznámy tlačiar zobral.
-              Lorem Ipsum je štandardným výplňovým textom už od 16. storočia, keď neznámy tlačiar zobral.
-            </p>
+            <p class="section__main__text">Zameriavam sa na najmodernejšie trendy a technológie spojené s frontendom. Základná znalosť backendových technológií je tiež neodmysliteľnou súčasťou tvorby webových stránok. Mojím cieľom je tvorba programátorsky čistých a korektne fungujúcich webov odrážajúcich priania mojich klientov.</p>
             <div class="row">
               <div class="col col__3 col__3--md skill">
                 <h3 class="skill__header">BACKEND</h3>
@@ -119,7 +119,7 @@
                   <li class="skill__list__item">HTML5, CSS3</li>
                   <li class="skill__list__item">Sass, Less</li>
                   <li class="skill__list__item">Bootstrap, Semantic Ui</li>
-                  <li class="skill__list__item">Javascript, jQuery</li>
+                  <li class="skill__list__item">JavaScript, jQuery</li>
                   <li class="skill__list__item">REACT, REDUX</li>
                   <li class="skill__list__item">GULP</li>
                   <li class="skill__list__item">GIT</li>
@@ -147,7 +147,7 @@
                 <div class="row">
                   <div class="col col__6 col__6--xs">
                     <ul class="contact">
-                      <li class="contact__item"><i aria-hidden="true" class="fa fa-phone"></i><a href="tel:+4201231234" class="contact__item__link"><span>+420 123 1234</span></a></li>
+                      <li class="contact__item"><i aria-hidden="true" class="fa fa-phone"></i><a href="tel:+420734134057" class="contact__item__link"><span>+420 734 134 057</span></a></li>
                       <li class="contact__item"><i aria-hidden="true" class="fa fa-envelope-o"></i><a href="mailto:hlavodesign@gmail.com" class="contact__item__link">hlavodesign@gmail.com</a></li>
                       <li class="contact__item"><i aria-hidden="true" class="fa fa-map-marker"></i><a href="#map" class="contact__item__link contact__item__link--map">Hadovitá 898/16 <br>Praha, Česká republika</a></li>
                     </ul>
@@ -158,21 +158,23 @@
                 </div>
               </div>
               <div class="col col__6 col__6--md">
-                <form method="post" class="form">
+                <form method="post" action="php/form.php" data-alert='{"success":{"title":"Ďakujem","text":"Ďakujem Vám za správu. Čo najrýchlejšie Vás budem kontaktovať."},"fail":{"title":"Ooops","text":"Niečo sa pokazilo, pošlite mi holuba :)."}}' class="form">
+                  <div class="loading"><span class="loading__dot">.</span><span class="loading__dot"> .</span><span class="loading__dot"> .</span></div>
                   <label class="form__label">
-                    <input type="text" name="meno" required autocomplete="off" class="form__label__item">
-                    <div class="form__label__text">Meno</div>
+                    <input type="text" data-pattern="length" name="meno" required autocomplete="off" class="form__label__item">
+                    <div class="form__label__text">meno</div>
                   </label>
                   <label class="form__label">
-                    <input type="email" name="email" required autocomplete="off" class="form__label__item">
+                    <input type="email" data-pattern="email" name="email" required autocomplete="off" class="form__label__item">
                     <div class="form__label__text">Email</div>
                   </label>
                   <label class="form__label">
-                    <textarea type="text" name="meno" required autocomplete="off" class="form__label__item form__label__item--textarea"></textarea>
-                    <div class="form__label__text">Sprava</div>
+                    <textarea type="text" data-pattern="length" name="text" required autocomplete="off" class="form__label__item form__label__item--textarea"></textarea>
+                    <div class="form__label__text">Správa</div>
+                    <input type="hidden" data-pattern="length" name="csrf_token" value="<?=$_SESSION['csrf_token'];?>">
                   </label>
                   <div class="form__wrapper">
-                    <button type="submit" placeholder="Message" class="form__label__item form__label__item--button">Pošlite mi správu</button>
+                    <button type="submit" class="form__label__item form__label__item--button">Pošlite mi správu</button>
                   </div>
                 </form>
               </div>

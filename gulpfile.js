@@ -6,24 +6,25 @@ var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var sass = require('gulp-sass');
 var del = require('del');
+var data = require('gulp-data');
 var browserify = require('gulp-browserify');
 var browserSync = require('browser-sync').create();
 var jade = require('gulp-jade');
 var plumber = require('gulp-plumber');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
-
+var gulpSequence = require('gulp-sequence');
 var paths = {
     scripts: 'src/**/*.js',
     styles: 'src/**/*.scss',
     images: 'src/images/*',
     jade: 'src/jade/*.jade',
     font: 'src/fonts/*',
-    php: 'src/php/*'
+    php: "src/**/*.php"
 };
 
 gulp.task('clean', function() {
-    return del(['dist/*']);
+    return del.sync(['dist/*']);
 });
 
 gulp.task('font', function() {
@@ -33,18 +34,32 @@ gulp.task('font', function() {
 
 gulp.task('php', function() {
     return gulp.src(paths.php)
-        .pipe(gulp.dest('dist/php'))
+        .pipe(gulp.dest('dist'))
 })
 
 gulp.task('jade', function() {
-    var YOUR_LOCALS = {};
-    gulp.src('src/jade/index.jade')
+    return gulp.src('src/jade/mutation.jade')
         .pipe(plumber())
+        .pipe(data(function(file) {
+            return require('./src/jade/content.json');
+        }))
         .pipe(jade({
-            locals: YOUR_LOCALS,
             pretty: true
         }))
-        .pipe(gulp.dest('./dist'))
+        .pipe(gulp.dest('./dist/slovak'))
+        .pipe(browserSync.stream());
+});
+
+gulp.task('jade-eng', function() {
+    return gulp.src('src/jade/mutation.jade')
+        .pipe(plumber())
+        .pipe(data(function(file) {
+            return require('./src/jade/content-eng.json');
+        }))
+        .pipe(jade({
+            pretty: true
+        }))
+        .pipe(gulp.dest('./dist/english'))
         .pipe(browserSync.stream());
 });
 
@@ -79,21 +94,17 @@ gulp.task('sass', function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task('serve', ['clean','font','php','jade','sass','scripts','images'], function() {
+gulp.task('serve', ['clean','font','php','jade','jade-eng','sass','scripts','images'], function() {
     browserSync.init({
         server: "/Users/Hlavo/www/hlavoDesign/dist"
         // SET THE ROOT FOLDER OF THE PROJECT
     });
     gulp.watch('src/jade/**/*', ['jade']);
+    gulp.watch('src/jade/**/*', ['jade']);
+    gulp.watch(['src/index.php','src/php/*'], ['php']);
     gulp.watch(paths.scripts, ['scripts']);
     gulp.watch(paths.images, ['images']);
     gulp.watch(paths.styles, ['sass']);
     gulp.watch("dist/index.html").on('change', browserSync.reload);
-});
 
-gulp.task('watch', function() {
-    gulp.watch(paths.jade, ['jade']);
-    gulp.watch(paths.scripts, ['scripts']);
-    gulp.watch(paths.images, ['images']);
-    gulp.watch(paths.styles, ['sass']);
 });

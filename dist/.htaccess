@@ -1,0 +1,16 @@
+# Turn on URL rewriting
+RewriteEngine On
+
+# Installation directory
+RewriteBase /hlavoDesign/dist/
+
+# Protect application and system files from being viewed
+ RewriteRule ^(english|slovak) - [F,L]
+# ak chcem zakazat dalsie oddelim ich | napr (prd|prdik)
+
+# Allow any files or directories that exist to be displayed directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite all other URLs to index.php/
+RewriteRule .* index.php/$0 [PT,L]

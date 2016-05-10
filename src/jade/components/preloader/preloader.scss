@@ -1,0 +1,25 @@
+.preloader{
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  background: $cierna;
+  top: 0;
+  left: 0;
+  display: block;
+  z-index: 9999999999999;
+  &--hide{
+    animation: none;
+    z-index: -9999999999999;
+  }
+  .logo{
+    animation-duration: 3s;
+    animation-name: breathing;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes breathing {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.05);}
+  100% {transform: scale(1);}
+}

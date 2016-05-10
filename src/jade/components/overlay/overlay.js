@@ -17,7 +17,6 @@ $(function(){
                 overlay.$overlay.toggleClass('overlay--active');
                 overlay.$overlay.toggleClass('overlay--hide');
             }
-            if($target.hasClass('button')) return false;
         },
         _handlers: function () {
             overlay.$workItem.on('click',overlay._toggleShow);

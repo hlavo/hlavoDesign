@@ -95,11 +95,14 @@ function initialize() {
     var map = new google.maps.Map(document.getElementById("map"),mapProp);
 
     var marker = new google.maps.Marker({
-        position: {lat: 50.0517861, lng:14.4581749 },
-        map: map,
-        title: 'HlavoDesign'
+        position: map.getCenter(),
+        icon: {
+            path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+            scale: 10
+        },
+        draggable: true,
+        map: map
     });
-    marker.setIcon('../images/marker.png')
 
 }
 google.maps.event.addDomListener(window, 'load', initialize);
