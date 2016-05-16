@@ -2,10 +2,6 @@
   display: inline-block;
   float: right;
   margin-right: 2em;
-  @media screen and (max-width: 350px) {
-    //float: left;
-    //width: 100%;
-  }
   &__item{
     margin-right: .5em;
     &__img{
