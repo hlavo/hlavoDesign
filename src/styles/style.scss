@@ -15,6 +15,9 @@ body{
   margin: 0;
   overflow-x: hidden;
   font-family: 'Palanquin', sans-serif;
+  &.noScroll{
+    overflow: hidden;
+  }
 }
 *, *:before, *:after{
   box-sizing:inherit;
@@ -173,7 +176,4 @@ h3, p, h1{
 @import '../jade/components/overlay/overlay.scss';
 @import '../jade/components/preloader/preloader.scss';
 @import '../jade/components/loading/loading.scss';
-
-//body > div:first-child{
-//  display: none!important;
-//}
+@import '../jade/components/flags/flags.scss';

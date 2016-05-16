@@ -11,4 +11,5 @@ mixin Work
                             p.section--work__item__text__centrator
                                 span.section--work__item__header=item.title
                                 |#{item.text}
-                                a(target="_blank",href=item.href).button.button--center Online
+                                -if(item.title!=="ZENTIVA")
+                                    a(target="_blank",href=item.href).button.button--center Online

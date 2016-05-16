@@ -10,6 +10,7 @@
 <!--Created by Hlavo on 13.4.16.-->
 <!--Created by Hlavo on 13.4.16.-->
 <!--Created by Hlavo on 13.4.16.-->
+<!--Created by Hlavo on 13.4.16.-->
 <!--Created by Hlavo on 13.4.16.--><!DOCTYPE html>
 <html>
   <head>
@@ -19,14 +20,44 @@
     <meta name="keywords" content="hlavo,web,design,aplikácia">
     <meta name="description" content="HlavoDesign, tvorba webov a webových aplikácií.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="author" content="HlavoDesign">
     <link rel="stylesheet" href="<?=BASE_URL?>styles/style.css">
-    <link rel="icon" type="image/png" href="../favico/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="../favico/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="<?=BASE_URL?>images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" sizes="16x16">
     <link href="https://fonts.googleapis.com/css?family=Palanquin:400,100,300&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <script src="http://maps.googleapis.com/maps/api/js"></script>
     <script src="<?=BASE_URL?>scripts/app.js"></script>
+    <link rel="shortcut icon" href="<?=BASE_URL?>favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?=BASE_URL?>images/favs/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?=BASE_URL?>images/favs/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?=BASE_URL?>images/favs/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?=BASE_URL?>images/favs/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="<?=BASE_URL?>images/favs/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?=BASE_URL?>images/favs/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="<?=BASE_URL?>images/favs/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?=BASE_URL?>images/favs/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="<?=BASE_URL?>images/favs/favicon-196x196.png', sizes='196x196">
+    <link rel="icon" type="image/png" href="<?=BASE_URL?>images/favs/favicon-96x96.png', sizes='96x96">
+    <link rel="icon" type="image/png" href="<?=BASE_URL?>images/favs/favicon-32x32.png', sizes='32x32">
+    <link rel="icon" type="image/png" href="<?=BASE_URL?>images/favs/favicon-16x16.png', sizes='16x16">
+    <link rel="icon" type="image/png" href="<?=BASE_URL?>images/favs/favicon-128.png', sizes='128x128">
+    <meta name="application-name" content=" ">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="mstile-144x144.png">
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png">
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png">
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png">
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-77793026-1', 'auto');
+      ga('send', 'pageview');
+    </script>
   </head>
 </html>
 <body>
@@ -37,10 +68,6 @@
         <div class="loading"><span class="loading__dot">.</span><span class="loading__dot"> .</span><span class="loading__dot"> .</span></div><span class="logo__text">hlavoDesign</span>
       </div>
     </div>
-  </div>
-  <div id="overlay" class="overlay overlay--hide">
-    <div class="overlay__cross">✖</div>
-    <div class="overlay__content"></div>
   </div>
   <div class="container">
     <header class="header">
@@ -62,6 +89,7 @@
         <div class="logo">
           <div class="logo__icon">hD</div><span class="logo__text">hlavoDesign</span>
         </div>
+        <div class="flags"><a href="<?=BASE_URL?>" class="flags__item"><img src="images/Slovakia-icon.png" class="flags__item__img"></a><a href="<?=BASE_URL?>en" class="flag__item"><img src="images/England-icon.png" class="flags__item__img"></a></div>
       </div>
     </header>
     <div class="main">
@@ -82,17 +110,20 @@
             <div class="row">
               <div class="col col__3 col__3--sm col__3--md section--work__item section--work__item--zlato">
                 <div class="section--work__item__text">
-                  <p class="section--work__item__text__centrator"><span class="section--work__item__header">ZLATO.CZ</span>Redakčný systém WORDPRESS tvorí jadro projektu ZLATO.cz. V rámci tímovej spolupráce som sa zameral na tvorbu responzívnych HTML šablón, ich grafické štýlovanie a javaScriptovú logiku.<a target="_blank" href="https://www.zlato.cz/" class="button button--center">Online</a></p>
+                  <p class="section--work__item__text__centrator"><span class="section--work__item__header">ZLATO.CZ</span>Redakčný systém WORDPRESS tvorí jadro projektu ZLATO.cz. V rámci tímovej spolupráce som sa zameral na tvorbu responzívnych HTML šablón, ich grafické štýlovanie a javaScriptovú logiku.<a target="_blank" href="https://www.zlato.cz/" class="button button--center">Online</a>
+                  </p>
                 </div>
               </div>
               <div class="col col__3 col__3--sm col__3--md section--work__item section--work__item--bs">
                 <div class="section--work__item__text">
-                  <p class="section--work__item__text__centrator"><span class="section--work__item__header">BLUE STYLE</span>Rozsiahly tímový projekt Blue Style je okrem zákazníckeho webu (B2C) rozšírený aj o verziu pre predajcov (B2B). Štýlovanie, tvorba HTML šablon (napr. vyhľadávanie zájazdov, detail hotelu) a javaScriptová logika (B2B) tohto projektu<a target="_blank" href="http://www.blue-style.cz/" class="button button--center">Online</a></p>
+                  <p class="section--work__item__text__centrator"><span class="section--work__item__header">BLUE STYLE</span>Rozsiahly tímový projekt Blue Style je okrem zákazníckeho webu (B2C) rozšírený aj o verziu pre predajcov (B2B). Štýlovanie, tvorba HTML šablon (napr. vyhľadávanie zájazdov, detail hotelu) a javaScriptová logika (B2B) tohto projektu je výsledkom mojej práce.<a target="_blank" href="http://www.blue-style.cz/" class="button button--center">Online</a>
+                  </p>
                 </div>
               </div>
               <div class="col col__3 col__3--sm col__3--md section--work__item section--work__item--zentiva">
                 <div class="section--work__item__text">
-                  <p class="section--work__item__text__centrator"><span class="section--work__item__header">ZENTIVA</span>Interaktívne prvky optimalizované pre iPad sú atraktívnym elementom, ktorý zaručene zaujme každého užívateľa. Ide o tvorbu animovaných prezentácií pomocou HTML5, CSS3 a knižnice jQuery.<a target="_blank" class="button button--center">Online</a></p>
+                  <p class="section--work__item__text__centrator"><span class="section--work__item__header">ZENTIVA</span>Interaktívne prvky optimalizované pre iPad sú atraktívnym elementom, ktorý zaručene zaujme každého užívateľa. Ide o tvorbu animovaných prezentácií pomocou HTML5, CSS3 a knižnice jQuery.
+                  </p>
                 </div>
               </div>
             </div>
@@ -195,5 +226,9 @@
         </section>
       </footer>
     </div>
+  </div>
+  <div id="overlay" class="overlay overlay--hide">
+    <div class="overlay__cross">✖</div>
+    <div class="overlay__content"></div>
   </div>
 </body>

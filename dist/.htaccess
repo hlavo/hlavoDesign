@@ -2,7 +2,8 @@
 RewriteEngine On
 
 # Installation directory
-RewriteBase /hlavoDesign/dist/
+#RewriteBase /hlavoDesign/dist/
+RewriteBase /
 
 # Protect application and system files from being viewed
  RewriteRule ^(english|slovak) - [F,L]

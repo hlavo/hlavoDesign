@@ -16,6 +16,7 @@ $(function(){
                 }
                 overlay.$overlay.toggleClass('overlay--active');
                 overlay.$overlay.toggleClass('overlay--hide');
+                $("body").toggleClass('noScroll');
             }
         },
         _handlers: function () {
@@ -34,6 +35,6 @@ $(function(){
     }
 
     overlay._init();
-    $(window).on('resize',overlay._init)
+    //$(window).on('resize',overlay._init)
 
 });

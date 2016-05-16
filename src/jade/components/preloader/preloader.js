@@ -1,4 +1,4 @@
-$(window).ready(function(){
+$(window).load(function(){
     $("#preloader").addClass('preloader--hide');
     $(".container").addClass("body--ready")
 });

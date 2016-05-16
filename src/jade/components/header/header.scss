@@ -50,6 +50,9 @@
     font-size: 1.1em;
     @extend %clearfix;
     z-index: 99999999;
+    @media screen and (max-width: 260px) {
+      font-size: .9em;
+    }
   }
 }
 

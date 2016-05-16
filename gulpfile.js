@@ -17,14 +17,20 @@ var gulpSequence = require('gulp-sequence');
 var paths = {
     scripts: 'src/**/*.js',
     styles: 'src/**/*.scss',
-    images: 'src/images/*',
+    images: 'src/images/**/*',
     jade: 'src/jade/*.jade',
     font: 'src/fonts/*',
-    php: "src/**/*.php"
+    php: "src/**/*.php",
+    fav: "src/*.ico"
 };
 
 gulp.task('clean', function() {
     return del.sync(['dist/*']);
+});
+
+gulp.task('fav', function() {
+    return gulp.src(paths.fav)
+        .pipe(gulp.dest('dist/'))
 });
 
 gulp.task('font', function() {
@@ -94,7 +100,7 @@ gulp.task('sass', function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task('serve', ['clean','font','php','jade','jade-eng','sass','scripts','images'], function() {
+gulp.task('serve', ['clean','font','fav','php','jade','jade-eng','sass','scripts','images'], function() {
     browserSync.init({
         server: "/Users/Hlavo/www/hlavoDesign/dist"
         // SET THE ROOT FOLDER OF THE PROJECT

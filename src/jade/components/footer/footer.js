@@ -98,7 +98,7 @@ function initialize() {
         position: map.getCenter(),
         icon: {
             path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
-            scale: 10
+            scale: 5
         },
         draggable: true,
         map: map
