@@ -21,7 +21,7 @@
   ],
   "sectionabout":{
     "title":"O mne",
-    "text":"Zdravím! Volám sa Peter Hlavena a som ten, koho potrebujete, ak túžite po modernom a atraktívnom webe.Som programátor webových stránok a webových aplikácií na voľnej nohe a toto je portfólio mojej práce.Pôsobím v Prahe a webdevelopment nie je len mojou prácou, ale aj koníčkom."
+    "text":"Zdravím! Volám sa Peter Hlavena a som ten, koho potrebujete, ak túžite po modernom a atraktívnom webe. Som programátor webových stránok a webových aplikácií na voľnej nohe a toto je portfólio mojej práce. Pôsobím v Prahe a webdevelopment nie je len mojou prácou, ale aj koníčkom."
   },
   "sectionwork":{
     "title":"Projekty",
@@ -34,7 +34,7 @@
       },
       {
         "title":"BLUE STYLE",
-        "text":"Rozsiahly tímový projekt Blue Style je okrem zákazníckeho webu (B2C) rozšírený aj o verziu pre predajcov (B2B). Štýlovanie, tvorba HTML šablon (napr. vyhľadávanie zájazdov, detail hotelu) a javaScriptová logika (B2B) tohto projektu je výsledkom mojej práce.",
+        "text":"Rozsiahly tímový projekt Blue Style je okrem zákazníckeho webu (B2C) rozšírený aj o verziu pre predajcov (B2B). Štýlovanie, tvorba HTML šablón (napr. vyhľadávanie zájazdov, detail hotelu) a javaScriptová logika (B2B) tohto projektu je výsledkom mojej práce.",
         "class":"bs",
         "href":"http://www.blue-style.cz/"
       },
