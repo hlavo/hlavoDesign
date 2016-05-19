@@ -10,10 +10,20 @@
     position: fixed;
     display: block;
   }
+  &__content{
+    overflow: hidden!important;
+    position: relative;
+    top: -3.5em;
+    height: 100%;
+    width: 100%;
+  }
   &--active{
     animation-name: showOverlay;
     animation-fill-mode: forwards;
     animation-duration: .5s;
+    .overlay__cross{
+      display: block;
+    }
   }
   &--hide{
     animation-name: hideOverlay;
@@ -21,14 +31,20 @@
     animation-duration: .5s;
   }
   &__cross{
-    z-index: 999999999!important;
     background: $cierna;
-    display: block;
+    display: none;
+    position: relative;
+    z-index: 9999999999;
     color: white !important;
-    font-size: 2em;
+      font-size: 2.439em;
     text-align: right;
     padding-right: .5em;
-    cursor: pointer;
+    @media screen and (max-width: 1000px) {
+      font-size: 2em;
+    }
+    .fa{
+      cursor: pointer;
+    }
   }
   .section--work__item__text__centrator{
     max-width: 40em;
@@ -37,11 +53,11 @@
 }
 
 @keyframes showOverlay {
-  0% {margin-top: 100vh;}
+  0% {margin-top: 100vh;display: block;}
   100% {margin-top: 0;}
 }
 
 @keyframes hideOverlay {
   0% {margin-top: 0;}
-  100% {margin-top: 100vh;}
+  100% {margin-top: 100vh;display: none;}
 }

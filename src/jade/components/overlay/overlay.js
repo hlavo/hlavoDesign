@@ -10,7 +10,7 @@ $(function(){
         _toggleShow: function(event){
             if(!overlay.$overlay.hasClass('overlay__status')) overlay.$overlay.addClass('overlay__status');
             var $target = $(event.target);
-            if($target.hasClass('section--work__item') || $target.hasClass('overlay__cross')) {
+            if($target.hasClass('section--work__item') || $target.hasClass('fa-times')) {
                 if($target.hasClass('section--work__item')){
                     overlay._innerHtml(event);
                 }
@@ -31,10 +31,19 @@ $(function(){
         _innerHtml: function(event){
             var innerHTML = $(event.target).find('.section--work__item__text').html();
             overlay.$overlay.find(".overlay__content").html(innerHTML);
+        },
+        _resizeWindow: function(){
+            if($(window).width() >= 1280){
+                if(overlay.$overlay.hasClass('overlay--active')){
+                    overlay.$overlay.find(".fa-times").trigger("click");
+                }
+            }else{
+                overlay._init();
+            }
         }
     }
 
     overlay._init();
-    //$(window).on('resize',overlay._init)
+    $(window).on('resize',overlay._resizeWindow)
 
 });
