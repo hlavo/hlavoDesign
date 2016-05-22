@@ -21,6 +21,7 @@ var paths = {
     jade: 'src/jade/*.jade',
     font: 'src/fonts/*',
     php: "src/**/*.php",
+    manifest: "src/*.appcache",
     fav: "src/*.ico"
 };
 
@@ -40,6 +41,11 @@ gulp.task('font', function() {
 
 gulp.task('php', function() {
     return gulp.src(paths.php)
+        .pipe(gulp.dest('dist'))
+})
+
+gulp.task('manifiest', function() {
+    return gulp.src(paths.manifest)
         .pipe(gulp.dest('dist'))
 })
 
@@ -100,7 +106,7 @@ gulp.task('sass', function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task('serve', ['clean','font','fav','php','jade','jade-eng','sass','scripts','images'], function() {
+gulp.task('serve', ['clean','font','manifiest','fav','php','jade','jade-eng','sass','scripts','images'], function() {
     browserSync.init({
         server: "/Users/Hlavo/www/hlavoDesign/dist"
         // SET THE ROOT FOLDER OF THE PROJECT

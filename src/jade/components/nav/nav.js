@@ -50,7 +50,7 @@ $(function(){
     }
 
     function animatingScroll($section){
-        var top = $section.length ? $section.offset().top-$offset : 0;
+        var top = $section.length ? $section.offset().top-$offset : -1;
         $("html,body").not(':animated').animate({ scrollTop: top+1},500);
     }
 
